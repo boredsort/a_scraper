@@ -1,0 +1,14 @@
+[project]
+name = "scraper"
+version = "0.0.1"
+description = "Scrapes airbnb and various rental websites"
+dependencies = [
+    'beautifulsoup4',
+    'lxml',
+    'curl_cffi',
+    'requests'
+]
+
+[build-system]
+requires = ["flit_core<4"]
+build-backend = "flit_core.buildapi"
