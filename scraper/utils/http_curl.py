@@ -15,18 +15,18 @@ class HTTP:
 		self.session.headers.update({
 			    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
 		})
-		self.proxy = {
-			'http': os.getenv('PROXY_HTTP'),
-			'https': os.getenv('PROXY_HTTPS')
-		}
+		# self.proxy = {
+		# 	'http': os.getenv('PROXY_HTTP'),
+		# 	'https': os.getenv('PROXY_HTTPS')
+		# }
 		self.max_retries = 5
 
 
 	def _send_request(self, method, url, **kwargs):
-		if 'proxies' not in kwargs:
-			kwargs.update({
-				'proxies': self.proxy
-			})
+		# if 'proxies' not in kwargs:
+		# 	kwargs.update({
+		# 		'proxies': self.proxy
+		# 	})
 		kwargs.update({'impersonate': "chrome110"})
 		error = None
 		for _ in range(self.max_retries):
